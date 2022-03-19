@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './ArtCard.module.css';
 
-console.log({ styles });
 const ArtCard = ({ art }) => (
   <div>
     <h2 className={styles.title}>Title: {art.title}</h2>
