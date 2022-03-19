@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import { Navbar, ArtCard } from '../components';
+import { Navbar, ArtCard, Map } from '../components';
 import { getArts } from '../services';
 
 export default function Home({ arts }) {
@@ -20,6 +20,8 @@ export default function Home({ arts }) {
         ))}
       </div>
       <Navbar />
+      <h2>Location</h2>
+      <Map arts={arts}/>
     </div>
   );
 }
