@@ -17,3 +17,9 @@ a {
 li{
   display:inline-block;
 }
+
+.box{
+  width:20px;
+  height:20px; 
+  background-color:black;
+}

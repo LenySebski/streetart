@@ -1,12 +1,11 @@
-import Map from 'react-map-gl';
-
+import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function MapView({ children }) {
   return (
-    <Map
+    <ReactMapGL
       initialViewState={{
         latitude: 64.12914739924277,
         longitude: -21.918358129291008,
@@ -18,6 +17,6 @@ export default function MapView({ children }) {
       mapboxAccessToken={token}
     >
       {children}
-    </Map>
+    </ReactMapGL>
   );
 }
