@@ -1,8 +1,5 @@
-.container>ul>li{
-
-    display:inline;
-
-
+.items {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10vw;
 }
-
-

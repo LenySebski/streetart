@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './ArtCard.module.css';
 
 const ArtCard = ({ art }) => (
-  <div>
+  <div className='container'>
     <h2 className={styles.title}>Title: {art.title}</h2>
     <h2>
       Artist:{' '}

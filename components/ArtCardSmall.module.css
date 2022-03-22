@@ -1,0 +1,25 @@
+.container {
+  width: 40vw;
+  border: 2px solid #ebebeb;
+  border-radius: 10px;
+  margin: 1rem;
+  margin-left: 7.5vw;
+  margin-top: 5vh;
+  cursor: pointer;
+  display: flex;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.vertical {
+  margin-left: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
