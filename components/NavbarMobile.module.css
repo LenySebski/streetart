@@ -7,16 +7,15 @@
 }
 @media(max-width:680px){
     .container{
-        background: red;  
-        visibility:hidden;
-        height:0;
+        height:5vh;
+        border: 1px grey solid; 
+        margin: 0 5%;
         
     }
 }
 @media(min-width:681px){
     .container{
-        border: 1px grey solid; 
-        height:5vh;
-        margin: 0 5%;
+        visibility:hidden;
     }
 }
+
