@@ -17,7 +17,7 @@ export const getArts = async () => {
               latitude
               longitude
             }
-            image {
+            mainImage {
               url
             }
             author

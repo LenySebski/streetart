@@ -76,7 +76,7 @@ export default function Home({ arts }) {
               <div>
                 <h2>{selectedArt.title}</h2>
                 <img
-                  src={selectedArt.image[0].url}
+                  src={selectedArt.mainImage.url}
                   alt={selectedArt.title}
                   width="100%"
                 />
