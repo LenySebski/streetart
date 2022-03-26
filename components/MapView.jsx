@@ -1,11 +1,11 @@
-import ReactMapGL, { GeolocateControl } from 'react-map-gl';
+import Map, { useMap, GeolocateControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function MapView({ children }) {
   return (
-    <ReactMapGL
+    <Map
       reuseMaps
       initialViewState={{
         latitude: 64.12914739924277,
@@ -20,6 +20,6 @@ export default function MapView({ children }) {
       {children}
 
       <GeolocateControl />
-    </ReactMapGL>
+    </Map>
   );
 }
