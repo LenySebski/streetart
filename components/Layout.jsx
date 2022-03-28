@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Navbar, NavbarMobile } from '.';
+import { Navbar } from '.';
 
 const Layout = ({ children }) => (
   <>
-    <Navbar />
     {children}
-    <NavbarMobile />
+    <Navbar />
   </>
 );
 

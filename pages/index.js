@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -14,6 +15,7 @@ import {
 } from '../components';
 import { getArts } from '../services';
 
+// eslint-disable-next-line react/prop-types
 export default function Home({ arts }) {
   console.log(arts);
   const [selectedArt, setSelectedArt] = useState(null);

@@ -1,29 +1,22 @@
 /* eslint-disable react/prop-types */
-import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import { getRecentArts, getSimilarArts } from '../services';
+import { getArtsNearby } from '../services';
 import styles from './ArtWidget.module.css';
 
-const ArtWidget = ({ slug, longitude, latitude }) => {
+const ArtsNearby = ({ title, slug, longitude, latitude }) => {
   const [relatedArts, setRelatedArts] = useState([]);
 
   useEffect(() => {
-    if (slug) {
-      getSimilarArts(slug, longitude, latitude).then((result) =>
-        setRelatedArts(result)
-      );
-    } else {
-      getRecentArts().then((result) => setRelatedArts(result));
-    }
+    getArtsNearby(slug, longitude, latitude).then((result) =>
+      setRelatedArts(result)
+    );
   }, [slug]);
 
   return (
     <div className={styles.widgetContainer}>
-      <h3>
-        {slug ? 'Other pieces other pieces close by:' : 'Recently added:'}{' '}
-      </h3>
+      <h3>Other pieces other pieces close to {title}: </h3>
       {relatedArts.map((art) => (
         <div key={art.slug}>
           <div className={styles.cardContainer}>
@@ -35,19 +28,10 @@ const ArtWidget = ({ slug, longitude, latitude }) => {
               height={400}
             />
             <div className={styles.infoContainer}>
-              <p className={styles.date}>
-                {moment(art.createdAt).format('DD.MM.YYYY')}
-              </p>
               <Link href={`/art/${art.slug}`}>
                 <a className={styles.title}>{art.title}</a>
               </Link>
-              <span>{` by `}</span>
-              {art.author.length ? (
-                art.author.join(',')
-              ) : (
-                // art.author.map((author) => <p>{author}</p>)
-                <p>Unkown</p>
-              )}
+              <p>{Math.floor(art.geolocation.distance)} m</p>
             </div>
           </div>
         </div>
@@ -56,4 +40,4 @@ const ArtWidget = ({ slug, longitude, latitude }) => {
   );
 };
 
-export default ArtWidget;
+export default ArtsNearby;

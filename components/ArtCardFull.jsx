@@ -20,14 +20,12 @@ const ArtCardFull = ({ art }) => {
       </div>
       <h3 className={styles.title}>{art.title}</h3>
       <h5 className={styles.artist}>
-        by <span>{art.author.length ? art.author.join(',') : 'Unkown'}</span>
+        by <span>{art.author.length ? art.author.join(' & ') : 'Unkown'}</span>
       </h5>
-      <p className={styles.location}>
-        {` ${art.geolocation.latitude} ,${art.geolocation.longitude}`}{' '}
-      </p>
       <h5 className={styles.date}>
         Added on: {moment(art.createdAt).format('DD MMM YYYY')}
       </h5>
+      <p>{art.description}</p>
     </div>
   );
 };

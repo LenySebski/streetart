@@ -109,6 +109,47 @@ export const getSimilarArts = async (categories, slug) => {
 
   return result.arts;
 };
+export const getArtsNearby = async (slug, longitude, latitude) => {
+  const query = gql`
+    query GetArtsDetails(
+      $slug: String!
+      $longitude: Float!
+      $latitude: Float!
+    ) {
+      arts(where: { slug_not: $slug }) {
+        title
+        author
+        slug
+        mainImage {
+          url
+        }
+        geolocation {
+          distance(from: { latitude: $latitude, longitude: $longitude })
+        }
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, {
+    slug,
+    longitude,
+    latitude,
+  });
+
+  function compare(a, b) {
+    if (a.geolocation.distance < b.geolocation.distance) {
+      return -1;
+    }
+    if (a.geolocation.distance > b.geolocation.distance) {
+      return 1;
+    }
+    return 0;
+  }
+
+  result.arts.sort(compare);
+
+  return result.arts;
+};
 
 export const getCategories = async () => {
   const query = gql`
@@ -121,4 +162,22 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI, query);
 
   return result.categories;
+};
+
+export const getSearchResults = async (searchPhrase) => {
+  const query = gql`
+    query getSearchResults($searchPhrase: String!) {
+      arts(where: { title_contains: $searchPhrase }) {
+        title
+        slug
+        mainImage {
+          url
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { searchPhrase });
+
+  return result.arts;
 };
