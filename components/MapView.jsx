@@ -16,7 +16,9 @@ export default function MapView({ children }) {
       reuseMaps
       {...viewState}
       style={{ width: '100%', height: '95vh' }}
-      onMove={(evt) => setViewState(evt.viewState)}
+      onMove={(evt) => {
+        setViewState(evt.viewState);
+      }}
       // mapStyle="mapbox://styles/mapbox/streets-v9"
       mapStyle="mapbox://styles/lenysebski/ckwz8y8c011bk14mu07wfzmm8"
       mapboxAccessToken={token}

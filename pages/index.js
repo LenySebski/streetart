@@ -2,36 +2,23 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import ReactMapGL, { Marker, GeolocateControl, Popup } from 'react-map-gl';
 import styles from '../styles/Home.module.css';
-
-import {
-  Navbar,
-  ArtCard,
-  ShowMarkers,
-  ArtWidget,
-  Categories,
-  MapView,
-} from '../components';
+import { ShowMarkers, ArtWidget, MapView } from '../components';
 import { getArts } from '../services';
+import MapPopup from '../components/MapPopup';
 
 // eslint-disable-next-line react/prop-types
 export default function Home({ arts }) {
   console.log(arts);
   const [selectedArt, setSelectedArt] = useState(null);
-
   const onMarkerClick = (e) => {
-    console.clear();
-    console.log(e);
     setSelectedArt(e);
   };
 
   const [showContent, setShowContent] = useState(false);
 
   const onShowContentClick = (e) => {
-    console.clear();
     setShowContent((prev) => !prev);
-    console.log(e);
   };
 
   return (
@@ -63,31 +50,7 @@ export default function Home({ arts }) {
             data={arts}
             onClick={(e) => onMarkerClick(e)}
           />
-          {selectedArt && (
-            <Popup
-              anchor="bottom"
-              longitude={selectedArt.geolocation.longitude}
-              latitude={selectedArt.geolocation.latitude}
-              closeOnClick={false}
-              onClose={() => setSelectedArt(null)}
-              maxWidth="160px"
-              offset={[0, -25]}
-            >
-              <div>
-                <h2>{selectedArt.title}</h2>
-                <img
-                  src={selectedArt.mainImage.url}
-                  alt={selectedArt.title}
-                  width="100%"
-                />
-              </div>
-            </Popup>
-
-            // <div className="popupContainer">
-            //   <div className="popupImage">IMAGE</div>
-            //   <div className="popupInfo">Hello</div>
-            // </div>
-          )}
+          {selectedArt && <MapPopup art={selectedArt} />}
         </MapView>
       </div>
     </div>
