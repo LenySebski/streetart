@@ -4,7 +4,7 @@ import useGeolocation from '../components/useGeolocation';
 
 function AuthLinks() {
   const { data: session, status } = useSession();
-  console.log(session);
+  console.log({ session, status });
 
   const loading = status === 'loading';
 

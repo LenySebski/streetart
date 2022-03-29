@@ -18,7 +18,10 @@ const ArtCardFull = ({ art }) => {
           placeholder="blur"
         />
       </div>
-      <h3 className={styles.title}>{art.title}</h3>
+      <h3 className={styles.title}>
+        {art.title}
+        {art.year && `(${art.year})`}
+      </h3>
       <h5 className={styles.artist}>
         by <span>{art.author.length ? art.author.join(' & ') : 'Unkown'}</span>
       </h5>

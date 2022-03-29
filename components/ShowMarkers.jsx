@@ -2,7 +2,7 @@ import React from 'react';
 import { Marker } from 'react-map-gl';
 import Pin from './Pin';
 
-const ShowMarkers = ({ data, onClick, setViewState }) =>
+const ShowMarkers = ({ data, onClick, selectedArt, setViewState }) =>
   data.map(({ node }) => (
     <Marker
       key={node.id}
@@ -10,7 +10,13 @@ const ShowMarkers = ({ data, onClick, setViewState }) =>
       latitude={node.geolocation.latitude}
       anchor="bottom"
     >
-      <Pin onClick={() => onClick(node)} />
+      <Pin
+        selectedArt={selectedArt}
+        node={node}
+        onClick={() => {
+          onClick(node);
+        }}
+      />
     </Marker>
   ));
 export default ShowMarkers;

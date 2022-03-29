@@ -23,21 +23,11 @@
   background: grey;
 }
 
-@media(max-width:680px) {
-  .showContent {
-    transform:translateY(-100vh)
-  }
-}
-@media(max-width:680px) {
-  .mainContainer{
-   display:block;
-   width:100%;
-  }
-}
+
+
 @media(max-width:680px) {
   .contentContainer{
     position:absolute;
-    top:100vh; 
     height:100vh;
     overflow-y: scroll;
   }

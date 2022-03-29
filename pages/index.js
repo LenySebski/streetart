@@ -21,9 +21,9 @@ export default function Home({ arts }) {
   const [selectedArt, setSelectedArt] = useState(null);
 
   const onMarkerClick = (e) => {
+    console.clear();
     console.log(e);
     setSelectedArt(e);
-    console.log({ selectedArt });
   };
 
   const [showContent, setShowContent] = useState(false);
@@ -33,6 +33,7 @@ export default function Home({ arts }) {
     setShowContent((prev) => !prev);
     console.log(e);
   };
+
   return (
     <div className={styles.mainContainer}>
       <Head>
@@ -48,9 +49,6 @@ export default function Home({ arts }) {
         }
       >
         <ArtWidget />
-        <ArtWidget />
-        <ArtWidget />
-        <Categories />
       </div>
       <div className={styles.mapContainer}>
         <MapView>
@@ -64,7 +62,11 @@ export default function Home({ arts }) {
           >
             {showContent ? 'Map View' : 'List View'}
           </button>
-          <ShowMarkers data={arts} onClick={(e) => onMarkerClick(e)} />
+          <ShowMarkers
+            selectedArt={selectedArt}
+            data={arts}
+            onClick={(e) => onMarkerClick(e)}
+          />
           {selectedArt && (
             <Popup
               anchor="bottom"

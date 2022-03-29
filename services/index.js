@@ -13,9 +13,11 @@ export const getArts = async () => {
             id
             slug
             title
+            year
             geolocation {
               latitude
               longitude
+              distance(from: { latitude: 64.1420, longitude: -21.9266 })
             }
             mainImage {
               url
@@ -27,7 +29,18 @@ export const getArts = async () => {
     }
   `;
 
+  function compareNodes(a, b) {
+    if (a.node.geolocation.distance < b.node.geolocation.distance) {
+      return -1;
+    }
+    if (a.node.geolocation.distance > b.node.geolocation.distance) {
+      return 1;
+    }
+    return 0;
+  }
+
   const result = await request(graphqlAPI, query);
+  result.artsConnection.edges.sort(compareNodes);
 
   return result.artsConnection.edges;
 };
@@ -41,6 +54,7 @@ export const getArtDetails = async (slug) => {
         active
         description
         slug
+        year
         geolocation {
           latitude
           longitude

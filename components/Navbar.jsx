@@ -4,14 +4,17 @@ import styles from './Navbar.module.css';
 
 const Navbar = () => (
   <nav className={styles.container}>
-    <div>
+    <div className="menu">
       <Link href="/">
-        <a>Map</a>
+        <a className={styles.navbarLink}>Map</a>
       </Link>
       <Link href="/gallery">
-        <a>Gallery</a>
+        <a className={styles.navbarLink}>Gallery</a>
       </Link>
     </div>
+    <Link href="/">
+      <button className={styles.loginBtn}>Log in</button>
+    </Link>
   </nav>
 );
 

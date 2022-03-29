@@ -1,8 +1,9 @@
 import React from 'react';
 import { GalleryWidget } from '../components';
+import styles from '../styles/Gallery.module.css';
 
 const gallery = () => (
-  <div>
+  <div className={styles.content}>
     <GalleryWidget />
   </div>
 );
