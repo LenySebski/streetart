@@ -7,40 +7,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-@media (max-width: 680px) {
-  .mapboxgl-map .mapboxgl-popup {
-    right: 6%;
-    bottom: 7%;
-    top: auto;
-    left: auto;
-    position: fixed;
-    transform: none !important;
-  }
-  .mapboxgl-map .mapboxgl-popup-tip {
-    display: none;
-  }
-  div.mapboxgl-popup-content {
-    /* background: red; */
-    height: 20vh;
-  }
-  .imgPopup {
-    width: 100%;
-    height: 6rem;
-    object-fit: cover;
-  }
-  div.mapboxgl-popup.mapboxgl-popup-anchor-bottom {
-    border: 1px solid black;
-    border-radius: 5px;
-    min-width: 88vw;
-    transform: none !important;
-  }
-
-}
-
-
-
-
-
 
 h1 {
 font-size:40px

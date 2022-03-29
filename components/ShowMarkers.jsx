@@ -1,9 +1,11 @@
 import React from 'react';
-import { Marker } from 'react-map-gl';
+import { Marker, useMap } from 'react-map-gl';
 import Pin from './Pin';
 
-const ShowMarkers = ({ data, onClick, selectedArt, setViewState }) =>
-  data.map(({ node }) => (
+const ShowMarkers = ({ data, onClick, selectedArt, setViewState }) => {
+  const { current: map } = useMap();
+
+  return data.map(({ node }) => (
     <Marker
       key={node.id}
       longitude={node.geolocation.longitude}
@@ -14,9 +16,17 @@ const ShowMarkers = ({ data, onClick, selectedArt, setViewState }) =>
         selectedArt={selectedArt}
         node={node}
         onClick={() => {
+          map.flyTo({
+            center: [node.geolocation.longitude, node.geolocation.latitude],
+            zoom: 13,
+            speed: 0.25,
+            curve: 0.6,
+            essential: true,
+          });
           onClick(node);
         }}
       />
     </Marker>
   ));
+};
 export default ShowMarkers;

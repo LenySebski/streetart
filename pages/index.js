@@ -54,11 +54,7 @@ export default function Home({ arts }) {
         <MapView>
           <button
             onClick={(e) => onShowContentClick(e)}
-            className={
-              showContent
-                ? `${styles.mapButton}`
-                : `${styles.mapButton} ${styles.blue}`
-            }
+            className={styles.mapButton}
           >
             {showContent ? 'Map View' : 'List View'}
           </button>
@@ -86,6 +82,11 @@ export default function Home({ arts }) {
                 />
               </div>
             </Popup>
+
+            // <div className="popupContainer">
+            //   <div className="popupImage">IMAGE</div>
+            //   <div className="popupInfo">Hello</div>
+            // </div>
           )}
         </MapView>
       </div>

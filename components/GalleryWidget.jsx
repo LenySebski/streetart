@@ -15,7 +15,7 @@ const GalleryWidget = () => {
 
   return (
     <div className={styles.widgetContainer}>
-      <form action={(e) => e.preventDefault()}>
+      <form onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="search">
           <span className="hidden">Search art</span>
         </label>
