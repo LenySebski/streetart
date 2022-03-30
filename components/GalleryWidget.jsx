@@ -40,7 +40,7 @@ const GalleryWidget = () => {
           </Link>
         ))}
       </div>
-      <div className={styles.bigDecoration}>Image</div>
+      <div className={styles.bigDecoration} />
     </div>
   );
 };

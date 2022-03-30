@@ -12,16 +12,17 @@ const MapPopup = ({ art }) => (
       />
     </div>
     <div className={styles.infoContainer}>
-      <h2 className='popupTitle'>
-        <span className={styles.title}>{art.title}</span> 
-          <p className='popupAuthor'>by{' '}
-          {art.author[art.author.length - 1]} {art.year && `(${art.year})`}
-          </p>
-        
+      <h2 className="popupTitle">
+        <span className={styles.title}>{art.title}</span>
+        <p className="popupAuthor">
+          by {art.author[art.author.length - 1]} {art.year && `(${art.year})`}
+        </p>
       </h2>
 
       <Link href={`/art/${art.slug}`}>
-        <button className={styles.seeMoreBtn}><a>see more</a></button>
+        <button className="buttonPrimary">
+          <a>see more</a>
+        </button>
       </Link>
     </div>
   </div>
