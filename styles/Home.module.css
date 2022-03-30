@@ -30,7 +30,7 @@
 .mainContainer {
   /* width: 90%; */
   margin: 0 auto;
-  height: 95vh;
+  height: 90vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #1e1e24;
@@ -73,6 +73,8 @@
     top: 100vh;
     height: 100vh;
     overflow-y: scroll;
+    margin-left: 0;
+    padding-top: 3rem;
   }
 }
 @media (max-width: 680px) {
@@ -85,8 +87,10 @@
   .mapButton {
     width: 6rem;
     height: 2rem;
-    background: #1f8c3a;
-    border-radius: 12%;
+    background: #ccff02;
+    color: #1e1e24;
+    border-style: none;
+    border-radius: 50px;
     position: absolute;
     top: 2vh;
     right: 10vw;
@@ -94,6 +98,10 @@
     text-align: center;
     z-index: 5;
   }
+
+  /* .mapButton:hover {
+    background: #ffffff;
+  } */
 }
 
 .container {

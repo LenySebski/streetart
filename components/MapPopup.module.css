@@ -9,7 +9,7 @@
   z-index: 1;
   position: absolute;
   left: 10%;
-  bottom: 5vh;
+  bottom: 10vh;
   transition: all 0.7s ease-in;
   overflow: hidden;
   display: flex;

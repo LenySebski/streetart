@@ -29,11 +29,15 @@ const ArtWidget = ({ longitude, latitude }) => {
               <p className={styles.distance}>
                 {Math.floor(node.geolocation.distance)}m
               </p>
-              <h3 className={styles.title}>{node.title}</h3>
-              <span>{` by `}</span>
-              {node.author[node.author.length - 1]}
+              <div className='artWidgetInfo'>
+                <h3 className={styles.title}>{node.title}</h3>
+                <span>{` by `}
+                {node.author[node.author.length - 1]}
+                </span>
+              </div>
+              
               <Link href={`/art/${node.slug}`}>
-                <button>
+                <button className='buttonPrimary'>
                   <a>details</a>
                 </button>
               </Link>

@@ -21,7 +21,7 @@ const MapPopup = ({ art }) => (
       </h2>
 
       <Link href={`/art/${art.slug}`}>
-        <button className={styles.seeMoreBtn}><a>see more</a></button>
+        <button className='buttonPrimary'><a>see more</a></button>
       </Link>
     </div>
   </div>
