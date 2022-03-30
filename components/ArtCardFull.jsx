@@ -7,6 +7,15 @@ const ArtCardFull = ({ art }) => {
   console.log(art);
   return (
     <div className={styles.container}>
+      <div className={styles.header}>
+      <h3 className={styles.title}>
+        {art.title}
+        {art.year && `(${art.year})`}
+      </h3>
+      <h5 className={styles.artist}>
+        by <span className={styles.artist}>{art.author.length ? art.author.join(' & ') : 'Unkown'}</span>
+      </h5>
+      </div>
       <div className={styles.imageContainer}>
         <Image
           className={styles.mainImage}
@@ -18,17 +27,13 @@ const ArtCardFull = ({ art }) => {
           placeholder="blur"
         />
       </div>
-      <h3 className={styles.title}>
-        {art.title}
-        {art.year && `(${art.year})`}
-      </h3>
-      <h5 className={styles.artist}>
-        by <span>{art.author.length ? art.author.join(' & ') : 'Unkown'}</span>
-      </h5>
+      
+      <div className={styles.textContainer}>
       <h5 className={styles.date}>
         Added on: {moment(art.createdAt).format('DD MMM YYYY')}
       </h5>
-      <p>{art.description}</p>
+      <p className={styles.description}>{art.description}</p>
+    </div>
     </div>
   );
 };
