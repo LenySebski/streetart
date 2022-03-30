@@ -15,7 +15,7 @@ export default function Home({ arts }) {
 
   const [showContent, setShowContent] = useState(false);
 
-  const onShowContentClick = (e) => {
+  const onShowContentClick = () => {
     setShowContent((prev) => !prev);
   };
 
