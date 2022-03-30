@@ -22,7 +22,6 @@ a {
 * {
   box-sizing: border-box;
   color: #ffffff;
-  background: #1e1e24;
 }
 li {
   display: inline-block;
@@ -36,4 +35,9 @@ li {
 
 .imageFit {
   object-fit: cover;
+}
+
+button {
+  background-color: #ccff02;
+  color: #1e1e24;
 }

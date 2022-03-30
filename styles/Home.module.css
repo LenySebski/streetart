@@ -28,11 +28,12 @@
 }
 
 .mainContainer {
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
   height: 95vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background: #1e1e24;
 }
 
 .contentContainer {
@@ -41,7 +42,8 @@
   transition: all 0.4s ease-in-out;
   z-index: 3;
   width: 100%;
-  /* background: #1e1e24; */
+  background: #1e1e24;
+  margin-left: 2rem;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

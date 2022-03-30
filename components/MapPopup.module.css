@@ -1,45 +1,45 @@
 .popupContainer {
-    margin: 0 auto;
-    width:80%;
-    height:15vh;
-    background:#ffffff;
-    border: 2px solid grey;
-    border-radius:4px;
-    z-index:1;
-    position:absolute;
-    left:10%;
-    bottom:5vh;
-    transition: all 0.7s ease-in;
-    overflow:hidden;
-    display:flex;
-
+  margin: 0 auto;
+  width: 80%;
+  height: 15vh;
+  background: #1e1e24;
+  border: 1px solid #ccff02;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 4px #ccff02;
+  z-index: 1;
+  position: absolute;
+  left: 10%;
+  bottom: 5vh;
+  transition: all 0.7s ease-in;
+  overflow: hidden;
+  display: flex;
 }
 
-
 .popupImageContainer {
-max-width:40%;
-height:15vh;
-display:flex;
-
-overflow:hidden;
+  max-width: 40%;
+  /* height: 15vh; */
+  display: flex;
+  border: 5px solid #1e1e24;
+  overflow: hidden;
 }
 
 .popupImage {
-    align-self:center;
-    position:relative;
-    width:100%;
-    
-fit-object:contain;
+  align-self: center;
+  position: relative;
+  width: 120px;
+  /* height: 120px; */
+  /* padding: 1rem; */
+
+  object-fit: contain;
 }
 
 .popupInfoContainer {
-    display: flex; 
-    flex-direction:column;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .closeBtn {
-    position:absolute;
-    top: 2rem;
-    right:2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
