@@ -2,5 +2,10 @@
   "extends": [
     "next/core-web-vitals",
     "wesbos"
-  ]
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/button-has-type": "off",
+    "no-unused-vars": "off",
+  }
 }
