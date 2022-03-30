@@ -20,7 +20,8 @@ export default function MapView({ children }) {
         setViewState(evt.viewState);
       }}
       // mapStyle="mapbox://styles/mapbox/streets-v9"
-      mapStyle="mapbox://styles/lenysebski/ckwz8y8c011bk14mu07wfzmm8"
+      // mapStyle="mapbox://styles/lenysebski/ckwz8y8c011bk14mu07wfzmm8"
+      mapStyle="mapbox://styles/lenysebski/cl1cvkoc1004h14qqtkvasp3d"
       mapboxAccessToken={token}
     >
       {children}
