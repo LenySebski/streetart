@@ -13,3 +13,5 @@ export { default as MapView } from './MapView';
 export { default as ArtsNearby } from './ArtsNearby';
 export { default as GalleryWidget } from './GalleryWidget';
 export { default as SignUpForm } from './SignUpForm';
+
+export { default as Map } from './Map';

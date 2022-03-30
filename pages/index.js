@@ -3,7 +3,11 @@ import Head from 'next/head';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+
 import { ShowMarkers, ArtWidget, MapView } from '../components';
+
+import { Navbar, ArtCard, Map } from '../components';
+
 import { getArts } from '../services';
 import MapPopup from '../components/MapPopup';
 
@@ -53,6 +57,11 @@ export default function Home({ arts }) {
           {selectedArt && <MapPopup art={selectedArt} />}
         </MapView>
       </div>
+
+      <Navbar />
+      <h2>Location</h2>
+      <Map arts={arts}/>
+
     </div>
   );
 }
