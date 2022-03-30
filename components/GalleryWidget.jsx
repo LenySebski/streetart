@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getSearchResults } from '../services';
-import styles from './ArtWidget.module.css';
+import styles from './GalleryWidget.module.css';
 
 const GalleryWidget = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,10 +16,8 @@ const GalleryWidget = () => {
   return (
     <div className={styles.widgetContainer}>
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="search">
-          <span className="hidden">Search art</span>
-        </label>
         <input
+          className={styles.searchBar}
           type="text"
           name="search"
           placeholder="search for the art"
@@ -31,10 +29,18 @@ const GalleryWidget = () => {
         {artResults.map((art) => (
           // eslint-disable-next-line @next/next/link-passhref
           <Link href={`/art/${art.slug}`}>
-            <Image width={400} height={400} src={art.mainImage.url} />
+            <a className={styles.link}>
+              <div className={styles.artContainer}>
+                <div className={styles.imageContainer}>
+                  <Image width={400} height={400} src={art.mainImage.url} />
+                </div>
+                <h3 className={styles.title}>{art.title}</h3>
+              </div>
+            </a>
           </Link>
         ))}
       </div>
+      <div className={styles.bigDecoration}>Image</div>
     </div>
   );
 };
