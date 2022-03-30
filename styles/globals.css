@@ -2,9 +2,19 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow:hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+
+h1 {
+font-size:40px
+}
+p{
+  font-size:16px
+}
+
 
 a {
   color: inherit;
@@ -16,4 +26,14 @@ a {
 }
 li{
   display:inline-block;
+}
+
+.box{
+  width:20px;
+  height:20px; 
+  background-color:black;
+}
+
+.imageFit {
+  object-fit:cover;
 }

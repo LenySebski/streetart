@@ -1,0 +1,45 @@
+.popupContainer {
+    margin: 0 auto;
+    width:80%;
+    height:15vh;
+    background:#ffffff;
+    border: 2px solid grey;
+    border-radius:4px;
+    z-index:1;
+    position:absolute;
+    left:10%;
+    bottom:5vh;
+    transition: all 0.7s ease-in;
+    overflow:hidden;
+    display:flex;
+
+}
+
+
+.popupImageContainer {
+max-width:40%;
+height:15vh;
+display:flex;
+
+overflow:hidden;
+}
+
+.popupImage {
+    align-self:center;
+    position:relative;
+    width:100%;
+    
+fit-object:contain;
+}
+
+.popupInfoContainer {
+    display: flex; 
+    flex-direction:column;
+
+}
+
+.closeBtn {
+    position:absolute;
+    top: 2rem;
+    right:2rem;
+}

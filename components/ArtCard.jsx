@@ -1,21 +1,30 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './ArtCard.module.css';
 
-console.log({ styles });
 const ArtCard = ({ art }) => (
-  <div>
-    <h2 className={styles.title}>Title: {art.title}</h2>
-    <h2>
-      Artist:{' '}
-      {art.author.map((artist) => (
-        <span>{artist} </span>
-      ))}
-    </h2>
-    <h3>Latitude: {art.geolocation.latitude}</h3>
-    <h3>Longitude: {art.geolocation.longitude}</h3>
-    <Image width={200} height={200} src={art.image[0].url} />
-  </div>
+  <Link href={`/art/${art.slug}`}>
+    <a>
+      <h2 className={styles.title}>Title: {art.title}</h2>
+      <h2>
+        Artist:{' '}
+        {art.author.map((artist) => (
+          <span>{artist} </span>
+        ))}
+      </h2>
+
+      <Image
+        className={styles.cardImage}
+        width={200}
+        height={200}
+        src={art.image[0].url}
+        blurDataURL={art.image[0].url}
+        placeholder="blur"
+      />
+    </a>
+  </Link>
 );
 
 export default ArtCard;

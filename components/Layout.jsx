@@ -1,11 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Navbar, Footer } from '.';
+import { Navbar } from '.';
 
 const Layout = ({ children }) => (
   <>
-    <Navbar />
     {children}
-    <Footer />
+    <Navbar />
   </>
 );
 

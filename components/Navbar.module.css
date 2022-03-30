@@ -1,8 +1,35 @@
 .container>ul>li{
 
     display:inline;
-
+}
+.container {
+    z-index:5;
+    position:sticky;
+    bottom:20px;
+    width:100vw;
+    background: #ffffff;
+    height:10vh;
+    border: 1px grey solid; 
+    display:flex; 
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
 
 }
-
-
+.menu {
+    margin-left:2rem;
+}
+.loginBtn {
+    display: inline;
+    padding: 0.2rem 1rem;
+    border-radius:20%;
+    margin-right:2rem;
+}
+.navbarLink {
+    padding: 0rem 2rem;
+}
+@media(max-width:680px){
+    .container{
+             
+    }
+}
