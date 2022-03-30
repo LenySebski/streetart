@@ -3,11 +3,11 @@
 }
 .container {
   z-index: 5;
-  position: sticky;
-  bottom: 20px;
+  position: fixed;
+  bottom: 0px;
   width: 100vw;
   background: #1e1e24;
-  height: 10vh;
+  height: 8vh;
   border-top: 1px #ffffff solid;
   display: flex;
   flex-direction: row;
