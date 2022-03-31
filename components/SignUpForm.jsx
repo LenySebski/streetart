@@ -36,7 +36,6 @@ const SignUpForm =  () => {
     formState: { errors },
   } = useForm();
   const [loading, setLoading] = useState(false);
-  const callbackURL = 'http://localhost:3000/sign-in';
 
   const onError = (errors, e) => console.log('HI THEREEEE!');
   const  onSubmit = async  (data, e) => postUser(data);
@@ -65,7 +64,7 @@ const SignUpForm =  () => {
         //     email,
         //   };
 
-        fetch("http://localhost:3000/api/auth/signup", {
+        fetch("http://rvkstreetart-dm2gunh39-lenysebski.vercel.app/api/auth/signup", {
             method: "POST", 
             body: JSON.stringify (
                 data
@@ -73,9 +72,8 @@ const SignUpForm =  () => {
         }).then(response=>{console.log(response);
         if (response.status==200) {
             router.push('/')
-    }   if (response.status===500){ 
-        console.log('ERRRRORO')
-    }
+    }   
+    
 
 })
     } catch (error) {
