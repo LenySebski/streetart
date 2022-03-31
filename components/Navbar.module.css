@@ -30,6 +30,15 @@
   border: 1px solid #ccff02;
   color: #ccff02;
 }
+
+.loginInfo{
+  margin-right:1rem;
+  display:inline;
+  
+}
+
+
+
 .navbarLink {
   padding: 0rem 2rem;
 }

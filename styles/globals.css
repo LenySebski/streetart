@@ -9,7 +9,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: #1E1E24;
 }
-
+input { 
+  color:black;
+}
 h1 {
   font-size: 40px;
 }

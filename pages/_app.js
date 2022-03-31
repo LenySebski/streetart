@@ -1,12 +1,15 @@
-/* eslint-disable react/prop-types */
 import '../styles/globals.css';
+import { SessionProvider } from 'next-auth/react';
+import { useContext } from 'react';
 import { Layout } from '../components';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SessionProvider session={session}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+         </SessionProvider>
   );
 }
 

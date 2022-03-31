@@ -8,6 +8,8 @@ import MapPopup from '../components/MapPopup';
 
 // eslint-disable-next-line react/prop-types
 export default function Home({ arts }) {
+
+
   const [selectedArt, setSelectedArt] = useState(null);
   const onMarkerClick = (e) => {
     setSelectedArt(e);

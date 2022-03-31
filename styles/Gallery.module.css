@@ -1,14 +1,15 @@
 .content {
     margin: 0 10%;
   background: #1E1E24;
+
   }
 
 
 
-.widgetContainer ::-webkit-scrollbar {
+.content ::-webkit-scrollbar {
     display: none;
   }
-  .widgetContainer{
+  .content{
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
