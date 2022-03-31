@@ -7,9 +7,9 @@ import { GeolocationProvider } from '../components/context/GeolocationProvider';
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <Layout>
+     
         <Component {...pageProps} />
-      </Layout>
+    
     </SessionProvider>
   );
 }
