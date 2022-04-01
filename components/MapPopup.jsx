@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './MapPopup.module.css';
 
+
 const MapPopup = ({ art }) => (
   <div className={styles.popupContainer}>
     <div className={styles.popupImageContainer}>

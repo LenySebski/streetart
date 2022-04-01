@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getSearchResults } from '../services';
 import styles from './GalleryWidget.module.css';
+import LikeButton from './LikeButton';
 
 const GalleryWidget = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,6 +14,8 @@ const GalleryWidget = () => {
     getSearchResults(searchQuery).then((result) => setArtResults(result));
   }, [searchQuery]);
 
+
+  
   return (
     <div className={styles.widgetContainer}>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -26,19 +29,25 @@ const GalleryWidget = () => {
         />
       </form>
       <div className={styles.galleryContainer}>
-        {artResults.map((art) => (
+        {artResults.map((art) => 
+
           // eslint-disable-next-line @next/next/link-passhref
-          <Link href={`/art/${art.slug}`}>
-            <a className={styles.link}>
-              <div className={styles.artContainer}>
+            {console.log(art)
+              
+              return <div className={styles.artContainer}>
                 <div className={styles.imageContainer}>
                   <Image width={400} height={400} src={art.mainImage.url} />
                 </div>
+                <div className={styles.artInfo}>
+                <Link href={`/art/${art.slug}`} key={art.title}>
+            <a className={styles.link}>
                 <h3 className={styles.title}>{art.title}</h3>
-              </div>
             </a>
           </Link>
-        ))}
+          <LikeButton art={art}/>
+                </div>
+              </div>}
+        )}
       </div>
       <div className={styles.bigDecoration} />
     </div>

@@ -5,13 +5,14 @@
 .widgetContainer {
   padding: 2rem;
   width: 80%;
-  margin: 2rem auto;
+  margin: 2rem auto 4rem;
   background: #1e1e24;
 }
 
 .cardContainer {
   /* height: 15vh; */
   display: flex;
+  height:8rem;
   width: 90%;
   border: 1px solid #ccff02;
   border-radius: 0 20px 20px 0;

@@ -22,8 +22,8 @@ const ArtWidget = ({ longitude, latitude }) => {
               className={styles.image}
               alt={node.title}
               src={node.mainImage.url}
-              width={400}
-              height={400}
+              width={200}
+              height={200}
             />
             <div className={styles.infoContainer}>
               <p className={styles.distance}>

@@ -6,9 +6,9 @@
   background: #1e1e24;
 }
 
-.mainImage {
+/* .mainImage {
   object-fit: cover;
-}
+} */
 
 .title {
   font-weight: 800;
@@ -30,5 +30,5 @@
 .header {
   background: #ccff02;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1600px;
 }

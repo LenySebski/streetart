@@ -24,8 +24,8 @@ const ArtCardFull = ({ art }) => {
           className={styles.mainImage}
           alt={art.title}
           src={art.mainImage.url}
-          width={1200}
-          height={900}
+          width={1500}
+          height={1000}
           blurDataURL={art.mainImage.url}
           placeholder="blur"
         />

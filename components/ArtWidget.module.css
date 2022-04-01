@@ -4,6 +4,7 @@
 .widgetContainer {
   display: grid;
   width: 40vw;
+  margin-bottom: 4rem;
   /* border: light-grey solid 1px; */
 }
 .cardContainer {

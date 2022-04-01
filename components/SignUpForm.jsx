@@ -69,7 +69,7 @@ const SignUpForm =  () => {
         <label htmlFor="username" className={styles.label}>
           Username
         </label>
-        <div className="">
+        <div >
           <input
             {...register('username', { required: true })}
             id="username"
@@ -85,7 +85,7 @@ const SignUpForm =  () => {
         <label htmlFor="email" className={styles.label}>
           Email
         </label>
-        <div className="">
+        <div>
           <input
             {...register('email', { required: true })}
             id="email"
@@ -102,7 +102,7 @@ const SignUpForm =  () => {
         <label htmlFor="password" className={styles.label}>
           Password
         </label>
-        <div className="">
+        <div >
           <input
             {...register('password', { required: true })}
             id="password"
@@ -112,7 +112,7 @@ const SignUpForm =  () => {
             className={styles.input}
           />
         </div>
-        {errors.password && <span className="">This field is required</span>}
+        {errors.password && <span >This field is required</span>}
       </div>
 
       <div>

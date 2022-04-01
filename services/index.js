@@ -14,6 +14,7 @@ export const getArts = async () => {
             slug
             title
             year
+            artData
             geolocation {
               latitude
               longitude
@@ -55,6 +56,7 @@ export const getArtDetails = async (slug) => {
         description
         slug
         year
+        artData
         geolocation {
           latitude
           longitude
@@ -79,50 +81,54 @@ export const getArtDetails = async (slug) => {
   return result.art;
 };
 
-export const getRecentArts = async () => {
-  const query = gql`
-    query GetRecentArts () {
-      arts(orderBy: createdAt_ASC
-      last:3) {
-        title
-        author
-        slug
-        mainImage{
-          url
-        }
-        createdAt
-      }
-    }`;
 
-  const result = await request(graphqlAPI, query);
+//Get recent arts proto
+// export const getRecentArts = async () => {
+//   const query = gql`
+//     query GetRecentArts () {
+//       arts(orderBy: createdAt_ASC
+//       last:3) {
+//         title
+//         author
+//         slug
+//         mainImage{
+//           url
+//         }
+//         createdAt
+//       }
+//     }`;
 
-  return result.arts;
-};
+//   const result = await request(graphqlAPI, query);
 
-export const getSimilarArts = async (categories, slug) => {
-  const query = gql`
-    query GetArtsDetails($slug: String!, $categories: [String!]) {
-      arts(
-        where: {
-          slug_not: $slug
-          AND: { categories_some: { slug_in: $categories } }
-        }
-        last: 3
-      ) {
-        title
-        author
-        slug
-        mainImage {
-          url
-        }
-        createdAt
-      }
-    }
-  `;
-  const result = await request(graphqlAPI, query, { categories, slug });
+//   return result.arts;
+// };
 
-  return result.arts;
-};
+
+//Get similar arts Proto
+// export const getSimilarArts = async (categories, slug) => {
+//   const query = gql`
+//     query GetArtsDetails($slug: String!, $categories: [String!]) {
+//       arts(
+//         where: {
+//           slug_not: $slug
+//           AND: { categories_some: { slug_in: $categories } }
+//         }
+//         last: 3
+//       ) {
+//         title
+//         author
+//         slug
+//         mainImage {
+//           url
+//         }
+//         createdAt
+//       }
+//     }
+//   `;
+//   const result = await request(graphqlAPI, query, { categories, slug });
+
+//   return result.arts;
+// };
 export const getArtsNearby = async (slug, longitude, latitude) => {
   const query = gql`
     query GetArtsDetails(
@@ -134,6 +140,7 @@ export const getArtsNearby = async (slug, longitude, latitude) => {
         title
         author
         slug
+        artData
         mainImage {
           url
         }
@@ -164,19 +171,19 @@ export const getArtsNearby = async (slug, longitude, latitude) => {
 
   return result.arts;
 };
+//Get categories proto
+// export const getCategories = async () => {
+//   const query = gql`
+//     query GetCategories() {
+//      categories{
+//        name
+//        slug
+//      }
+//     }`;
+//   const result = await request(graphqlAPI, query);
 
-export const getCategories = async () => {
-  const query = gql`
-    query GetCategories() {
-     categories{
-       name
-       slug
-     }
-    }`;
-  const result = await request(graphqlAPI, query);
-
-  return result.categories;
-};
+//   return result.categories;
+// };
 
 export const getSearchResults = async (searchPhrase) => {
   const query = gql`
@@ -184,6 +191,7 @@ export const getSearchResults = async (searchPhrase) => {
       arts(where: { title_contains: $searchPhrase }) {
         title
         slug
+        artData
         mainImage {
           url
         }

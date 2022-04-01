@@ -14,7 +14,7 @@ const Navbar = () =>{
 
 return  (
   <nav className={styles.container}>
-    <div className="menu">
+    <div className={styles.menu}>
       <Link href="/">
         <a className={styles.navbarLink}>Map</a>
       </Link>
@@ -33,7 +33,7 @@ return  (
 </h5> 
 <button className={styles.loginBtn} onClick={signOut}>Sign out</button>     
 </div>
-  ) : (<div clas> <Link href="/signup">
+  ) : (<div> <Link href="/signup">
 <button  className={styles.loginBtn} >Sign up</button>
 </Link>
 <button  className={styles.loginBtn} onClick={signIn}>Sign in</button> </div> )}
