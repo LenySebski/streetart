@@ -50,8 +50,18 @@ const CreateNextUser = gql`
   }
 `;
 
+const options={
+  theme: {
+    colorScheme: "auto", // "auto" | "dark" | "light"
+    brandColor: "#ccff02", // Hex color value
+    logo: "" // Absolute URL to logo image
+  }}
+
 export default NextAuth({
-   
+  theme: {
+    colorScheme: "auto", // "auto" | "dark" | "light"
+    brandColor: "#ccff02", // Hex color value
+    logo: "",}, // Absolute URL to logo image,
   providers: [
     CredentialsProvider({
       name: 'your account',
@@ -102,12 +112,9 @@ export default NextAuth({
         } else {
             return null
         }
-      
+        
       },
-      pages:{
-
-      }
-    
+      
     }),
   ],
 });

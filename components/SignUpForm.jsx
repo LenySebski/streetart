@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // import { signIn } from 'next-auth/react';
 //import { compare, hash } from 'bcrypt';
 import { GraphQLClient, gql } from 'graphql-request';
-// import styles from './SignUpForm.module.css';
+import styles from './SignUpForm.module.css';
 import { useRouter } from 'next/router';
 
 
@@ -64,7 +64,7 @@ const SignUpForm =  () => {
         //     email,
         //   };
 
-        fetch("http://rvkstreetart-dm2gunh39-lenysebski.vercel.app/api/auth/signup", {
+        fetch("https://rvkstreetart-dm2gunh39-lenysebski.vercel.app/api/auth/signup", {
             method: "POST", 
             body: JSON.stringify (
                 data
@@ -84,10 +84,11 @@ const SignUpForm =  () => {
       
 
 
-  return (
-    <form onSubmit={(e)=>handleSubmit(onSubmit, onError)(e).catch((e)=>{console.log({e})})} className="">
-      <div>
-        <label htmlFor="username" className="">
+  return (<div className={styles.card}>
+      <h3 className={styles.header}>Sign Up</h3>
+    <form onSubmit={(e)=>handleSubmit(onSubmit, onError)(e).catch((e)=>{console.log({e})})} className={styles.form}>
+      <div >
+        <label htmlFor="username" className={styles.label}>
           Username
         </label>
         <div className="">
@@ -97,13 +98,13 @@ const SignUpForm =  () => {
             name="username"
             type="text"
             autoComplete="username"
-            className=""
+            className={styles.input}
           />
         </div>
         {errors.email && <span className="">This field is required</span>}
       </div>
       <div>
-        <label htmlFor="email" className="">
+        <label htmlFor="email" className={styles.label}>
           Email
         </label>
         <div className="">
@@ -113,14 +114,14 @@ const SignUpForm =  () => {
             name="email"
             type="email"
             autoComplete="email"
-            className="a"
+            className={styles.input}
           />
         </div>
         {errors.email && <span className="">This field is required</span>}
       </div>
 
       <div>
-        <label htmlFor="password" className="">
+        <label htmlFor="password" className={styles.label}>
           Password
         </label>
         <div className="">
@@ -130,18 +131,19 @@ const SignUpForm =  () => {
             name="password"
             type="password"
             autoComplete="email"
-            className=""
+            className={styles.input}
           />
         </div>
         {errors.password && <span className="">This field is required</span>}
       </div>
 
       <div>
-        <button type="submit" className="signupBtn" disabled={loading}>
+        <button type="submit" className={styles.button} disabled={loading}>
           Create free account
         </button>
       </div>
     </form>
+    </div>
   );
 };
 

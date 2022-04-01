@@ -1,9 +1,9 @@
 import React from 'react';
 import { SignUpForm } from '../components';
-
+import styles from '../styles/Signup.module.css'
 const signUp = () => (
-  <div>
-    Sign Up
+  <div className={styles.page}>
+    
     <SignUpForm />
   </div>
 );
