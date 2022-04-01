@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Group Project Module 6
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[Hi - Fi prototype](https://www.figma.com/proto/8DVEYMmk8bxLNcLoaZ0uQW/Design-%2F-Prototype?node-id=64%[…]=scale-down&page-id=64%3A1561&starting-point-node-id=64%3A1598)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[research information](https://www.figma.com/file/RhX5YqCZpKOT5RlQLWr33V/RVK-street-art-information)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[interviews](https://www.figma.com/file/VBKoIlPxyUgCAk7oTbhKnX/User-Interviews-%2F-Design-Thinking-%F0%9F%A7%A0%F0%9F%92%AD-)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[user persona](https://www.figma.com/file/udRgaQHmpWXsMIpyAv657y/User-Persona)
 
-## Learn More
+[user stories and user journey](https://www.figma.com/file/44NH75ehsuW0QCw2f9sUp9/User-Stories-and-User-Journey)
 
-To learn more about Next.js, take a look at the following resources:
+[design sprint](https://www.figma.com/file/WtnzRJprsTeia4Jon2NiDb/Design-Sprint)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[wireframes, lo-fi prototype, usability testing](https://www.figma.com/file/ryfdUFc0NqV2A2FryYiwCP/Wireframes?node-id=26%3A4632)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[lo-fi prototype](https://www.figma.com/proto/ryfdUFc0NqV2A2FryYiwCP/Wireframes?node-id=26%3A4882&sca[…]=scale-down&page-id=26%3A4632&starting-point-node-id=26%3A4757)
 
-## Deploy on Vercel
+[moodboard](https://www.figma.com/file/Ghz0IoXeMZzljaEfyNSKhc/Moodboard)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[sketches, hi-fi prototype (mobile device), user testing, style guide](https://www.figma.com/file/8DVEYMmk8bxLNcLoaZ0uQW/Design-%2F-Prototype?node-id=0%3A1)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[agile, to do list in Asana](https://app.asana.com/0/1201998003837380/list)
+
+
+[live demo](https://rvkstreetart-git-design-lenysebski.vercel.app/)

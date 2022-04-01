@@ -24,18 +24,6 @@ const GetUserByEmail = gql`
      }
    }
 `;
-
-// const GetUser = gql`
-//   query GetUser($username: String!) {
-//     userData: nextUsers(
-//         where: {OR:[{username: $username},{email:$username}]
-//       stage: DRAFT
-//     ) {
-//       id
-//       password
-//     }
-//   }
-// `;
 const CreateNextUser = gql`
   mutation CreateNextUser(
     $username: String!
@@ -49,13 +37,6 @@ const CreateNextUser = gql`
     }
   }
 `;
-
-const options={
-  theme: {
-    colorScheme: "auto", // "auto" | "dark" | "light"
-    brandColor: "#ccff02", // Hex color value
-    logo: "" // Absolute URL to logo image
-  }}
 
 export default NextAuth({
   theme: {
@@ -83,19 +64,8 @@ export default NextAuth({
                  });
       
         if (user[0]) {
-            console.error('ERROR')
+            console.error('Wrong Credentials')
 
-        //   const { newUser } = await client.request(
-        //     CreateNextUserByEmail,
-        //     {
-        //       email,
-        //       password: await hash(password, 12),
-        //     }
-        //   );
-      
-        //   return {
-        //     id: newUser.id,
-        //     username: email,
         const isValid = await compare(password, user[0].password);
     
         if (!isValid) {
@@ -107,8 +77,7 @@ export default NextAuth({
           name:user[0].username,
           email:user[0].email,
         };
-        //     email,
-        //   };
+        
         } else {
             return null
         }

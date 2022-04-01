@@ -1,7 +1,5 @@
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
-// import { signIn } from 'next-auth/react';
-//import { compare, hash } from 'bcrypt';
 import { GraphQLClient, gql } from 'graphql-request';
 import styles from './SignUpForm.module.css';
 import { useRouter } from 'next/router';
@@ -25,11 +23,6 @@ const SignUpForm =  () => {
     }
   `;
 
-//   const client = new GraphQLClient(process.env.GRAPHCMS_ENDPOINT, {
-//     headers: {
-//       Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
-//     },
-//   });
   const {
     register,
     handleSubmit,
@@ -47,22 +40,7 @@ const SignUpForm =  () => {
          email 
       } = data
     try {
-        // const { user } = await client.request(CreateNextUser, {
-        // body: JSON.stringify({
-        //     username,
-        //     password: await hash(password, 12),
-        //     email,
-        // }),
-        // headers: {
-        //     'Content-Type': 'application/json',
-        // },
-        // method: 'POST'
-        // });
-        //   return {
-        //     id: user.id,
-        //     username,
-        //     email,
-        //   };
+       
 
         fetch("/api/auth/signup", {
             method: "POST", 
