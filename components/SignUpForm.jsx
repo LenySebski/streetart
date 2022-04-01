@@ -64,17 +64,17 @@ const SignUpForm =  () => {
         //     email,
         //   };
 
-        fetch("https://rvkstreetart-dm2gunh39-lenysebski.vercel.app/api/auth/signup", {
+        fetch("/api/auth/signup", {
             method: "POST", 
             body: JSON.stringify (
                 data
             )
         }).then(response=>{console.log(response);
         if (response.status==200) {
-            router.push('/')
+            router.push('/api/auth/signin')
+            
+           
     }   
-    
-
 })
     } catch (error) {
         console.log({error})

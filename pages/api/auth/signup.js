@@ -46,6 +46,6 @@ const client = new GraphQLClient(process.env.GRAPHCMS_ENDPOINT, {
     }
   )
 
-  
+  res.status(200).json({ name: username})
     
 }
