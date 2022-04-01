@@ -9,16 +9,20 @@ const client = new GraphQLClient(process.env.GRAPHCMS_ENDPOINT, {
     Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
   },
 });
-const GetUser = gql`
-  query GetUser($username: String!) {
-    userData: nextUsers(
-        where: {OR:[{username: $username},{email:$username}]
-      stage: DRAFT
+
+const GetUserByEmail = gql`
+   query GetUser($username: String!) {
+     user: nextUsers(
+         where: {OR:[{username: $username},{email:$username}]}
+        
     ) {
-      id
+       id
+      username
+      email
       password
-    }
-  }
+      
+     }
+   }
 `;
 const CreateNextUser = gql`
   mutation CreateNextUser(
@@ -35,47 +39,51 @@ const CreateNextUser = gql`
 `;
 
 export default NextAuth({
+  theme: {
+    colorScheme: "auto", // "auto" | "dark" | "light"
+    brandColor: "#ccff02", // Hex color value
+    logo: "",}, // Absolute URL to logo image,
   providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),
     CredentialsProvider({
       name: 'your account',
       credentials: {
         username: {
-          label: 'Username or email',
-          type: 'text',
-          placeholder: 'John_Doe/john@doe.com',
+            label: "Username",
+            type: "text",
+            placeholder: "jamie@graphcms.com"
         },
         password: {
           label: 'Password',
           type: 'password',
           placeholder: 'Password',
         },
-      },
+    },
       authorize: async ({ username, password }) => {
-        const { user } = await client.request(GetUser, {
+        const { user } = await client.request(GetUserByEmail, {
           username,
-        });
-        console.log({ user });
+                 });
+      
+        if (user[0]) {
+            console.error('Wrong Credentials')
 
-        if (!user) {
-          throw new Error(`Probably You don't have an account.`);
-        }
-
-        const isValid = await compare(password, user.password);
-
+        const isValid = await compare(password, user[0].password);
+    
         if (!isValid) {
-          throw new Error('Wrong credentials. Try again.');
+         return null
+        
         }
-
+      
         return {
-          id: user.id,
-          name: user.username,
-          email: user.email,
+          name:user[0].username,
+          email:user[0].email,
         };
+        
+        } else {
+            return null
+        }
+        
       },
+      
     }),
   ],
 });

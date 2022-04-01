@@ -8,7 +8,6 @@ import styles from '../../styles/SingleArtPage.module.css';
 export default function SingleArtPage({ art }) {
   return (
     <div className={styles.contentContainer}>
-      <Link href="/">back Home</Link>
       <ArtCardFull art={art} />
       <ArtsNearby
         title={art.title}

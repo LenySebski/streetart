@@ -2,9 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
-const Navbar = () => (
+import { useSession, signIn, signOut } from 'next-auth/react'
+
+
+const Navbar = () =>{
+  
+  const { data: session, status } = useSession();  console.log(session);
+  const loading = status === 'loading';
+  if (loading) return null;
+
+
+return  (
   <nav className={styles.container}>
-    <div className="menu">
+    <div className={styles.menu}>
       <Link href="/">
         <a className={styles.navbarLink}>Map</a>
       </Link>
@@ -12,10 +22,22 @@ const Navbar = () => (
         <a className={styles.navbarLink}>Gallery</a>
       </Link>
     </div>
-    <Link href="/">
+    {/* <Link href="/">
       <button className={styles.loginBtn}>Log in</button>
-    </Link>
+    </Link> */}
+
+    {session ? (        
+<div>
+<h5 className={styles.loginInfo}> 
+    Signed in as {session?.user?.name}
+</h5> 
+<button className={styles.loginBtn} onClick={signOut}>Sign out</button>     
+</div>
+  ) : (<div> <Link href="/signup">
+<button  className={styles.loginBtn} >Sign up</button>
+</Link>
+<button  className={styles.loginBtn} onClick={signIn}>Sign in</button> </div> )}
   </nav>
-);
+)};
 
 export default Navbar;
