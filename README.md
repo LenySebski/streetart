@@ -26,4 +26,4 @@
 [agile, to do list in Asana](https://app.asana.com/0/1201998003837380/list)
 
 
-[live demo](https://rvkstreetart-git-design-lenysebski.vercel.app/)
+[live demo](https://www.reykjavikstreet.fun/)
